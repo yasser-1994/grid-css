@@ -1,0 +1,109 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+body{
+  padding: 50px;
+  background-color:#d8d8d8;
+}
+:root{
+  --back-graund:#000;
+  --color:white;
+  --span-main:#a9a9a9;
+  --par-p: rgb(124 125 125)
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(4,auto);
+  grid-gap:10px;
+  grid-template-areas: "osama osama ahmed shady"
+                       "mohamed mahmoud mahmoud shady"
+                       "mohamed ezzelden ezzelden shady"
+                       "mohamed-syed ibrahem gamal eman"; 
+                                  
+}
+.container .item{
+  background-color: white;
+  border-bottom: 4px solid #f37e2f;
+  padding: 15px;
+  position: relative;
+  
+}
+.container .item::after{
+  content: ",,";
+  position: absolute;
+  font-size: 30px;
+  bottom: 5px;
+  right: 10px;
+  font-weight: bold;
+}
+.container .item h3{margin-bottom: 3px;}
+.container .item span{
+  color: var(--span-main);
+}
+.container .item .head{font-weight: 600; line-height: 1.2em;}
+.container .item .par{color:var(--par-p) ; line-height: 1.5em;}
+.container .item .head, .container .item .par{
+  margin-top: 15px;
+}
+.container .item-1{
+  grid-area: osama;
+}
+.container .item-2{
+  grid-area: ahmed;
+}
+.container .item-3{
+  grid-area: shady;
+  background-color: var(--back-graund);
+  color: var(--color);
+
+}
+.container .item-4{
+  grid-area: mohamed;
+}
+.container .item-5{
+  grid-area: mahmoud;
+  background-color: var(--back-graund);
+  color: var(--color);
+}
+.container .item-6{
+  grid-area: ezzelden;
+}
+.container .item-7{
+  grid-area: mohamed-syed;
+}
+.container .item-8{
+  grid-area: ibrahem;
+  background-color: var(--back-graund);
+  color: var(--color);
+}
+.container .item-9{
+  grid-area: gamal;
+}
+.container .item-10{
+  grid-area: eman;
+}
+
+@media screen and (max-width:767px){
+  .container{grid-template-areas: "osama osama ahmed ahmed"
+                                  "shady shady mohamed mohamed"
+                                  "mahmoud mahmoud ezzelden ezzelden"
+                                  "mohamed-syed mohamed-syed ibrahem ibrahem"
+                                  "gamal gamal eman eman";        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
